@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Website</title>
+<style media="screen"></style>
+<script src="jquery.js"></script>
+<style>
+    body{
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(yellow,lightgreen);
+        overflow: hidden;
+    }
+    
+      .slide{
+        height: 100px;
+        width: 200px;
+        display: grid;
+        place-items: center;
+        padding: 15px;
+        margin: 20px;
+        perspective: 100px;
+    }
+    img{
+        height: 200px;
+        width: 240px;
+        margin: 10px;
+        border: 2px solid black;
+        transition: transform(1s);
+        margin: 15px;
+    }
+    .image-slider{
+    
+        display: grid;
+        place-items: center;
+        position: relative;
+    }
+     .image-slider-track{
+        width: 240px;
+        height: 200px;
+        display: flex;
+        width: calc(200px*10);
+        animation: play 40s linear, infinite;
+
+        }
+        @keyframes play{
+            0%{
+                transform: translateX(0);
+            }
+            100%{
+                transform: translateX(calc(-250px*6));
+            }
+        }
+        .image-slider::before,
+        .image-slider::after{
+            background: linear-gradient(to right,rgba(255,255,255,1)0%,rgba(255,255,255,0)100%);
+            content: '';
+            height: 50%;
+            width: 15%;
+            z-index: 2;
+            position: absolute;
+        }
+        .image-slider::before{
+            left: 0;
+            top: 0;
+        }
+        .image-slider::after{
+            right: 0;
+            top: 0;
+            background: linear-gradient(to left,rgba(255,255,255,1)0%,rgba(255,255,255,0)100%);
+
+        }
+        img:hover{
+            transform: translateZ(20px);
+        }
+        
+        
+    
+</style>
+
+</head>
+<body>
+
+
+    
+    <div class="container">
+    <div class="image-slider">
+         <div class="image-slider-track">
+        <div class="slide"> 
+                <img src="IMAGE/z-grills-australia-jkP5KFVbpGg-unsplash.jpg">
+                </div>
+
+     <div class="slide">
+         <a href="IMAGE/company/home.html" target="iframe_a" >
+                <img src="IMAGE/whitney-wright-TgQkxQc-t_U-unsplash.jpg">
+                <p>news headlines</p>
+              </a>
+            </div>
+    <div class="slide"> 
+                <img src="IMAGE/kobby-mendez-xBFTjrMIC0c-unsplash.jpg"  onclick="myFunction()"> 
+                <a href="IMAGE/company/home.html">
+                    <p>news headlines</p></a>
+                </div>
+        <div class="slide"> 
+                    <img src="IMAGE/suad-kamardeen-3lnsCAQm23U-unsplash.jpg" >
+                    </div>
+        <div class="slide"> 
+                        <img src="IMAGE/pranjall-kumar-sejqj6Eaqe8-unsplash.jpg">
+                        </div>
+
+        <div class="slide"> 
+                            <img src="IMAGE/casey-lee-awj7sRviVXo-unsplash.jpg">
+                            </div>
+            
+        <div class="slide"> 
+                            <img src="IMAGE/605cd28089543098586eceed362c1d19.jpg">
+                        </div>
+         <div class="slide"> 
+                            <img src="IMAGE/69add3fd6cce005f03fb96a59a801cd6.jpg">
+                            </div>
+         <div class="slide"> 
+                                <img src="IMAGE/be93ef97205d094c368f1d218b7a7bd0.jpg">
+                                </div>
+            
+             <div class="slide"> 
+        <img src="IMAGE/srijal-maharjan-OAdWsV6qDxQ-unsplash.jpg">
+        </div> 
+        
+         </div>
+    </div>
+    </div>
+    </div>
+    
+
+    
+    <script>
+        function myFunction(){
+            document.getElementById("demo").innerHTML="IMAGE/company/home.html"
+        };
+    
+        var myIndex = 0;
+        carousel();
+        function carousel(){
+            var i;
+            
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i <x.length; i++)
+            {
+               x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex> x.length)
+            {myIndex = i}
+            x[myIndex-1]. style.display = "grid";
+            setTimeout(carousel,2000);
+        }
+    </script>
+    
+</body>
+</html>
