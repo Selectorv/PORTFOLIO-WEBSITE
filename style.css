@@ -1,0 +1,356 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root{
+    --max-width:1200px;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background: #f8f8f8; 
+}
+header{
+    width: 100%;
+    
+
+}
+.navbar{
+    
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+
+   
+ 
+}
+.navbar .logo {
+    display: flex;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(8, 111, 111);
+    font-family: Georgia, 'Times New Roman';
+    text-decoration: none;
+    margin-left: 4rem;
+    
+}
+
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+    text-decoration: none;
+    color: black;
+    list-style-type: none;
+    justify-content: space-between;
+    
+}
+.navbar .links li{
+    margin: 0 1px;
+    position: relative;
+
+}
+.navbar .links a{
+    color: black;
+}
+.navbar .links li::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(11,138,138);
+    background-color: green;
+    left: 50%;
+    bottom: -10px;
+    
+}
+.navbar .links li:hover::before{
+    width: 100%;
+    left: 0;
+    color: rgb(11,138,138);
+     
+}
+.navbar .links a:hover::after{
+    
+    color: rgb(11,138,138);
+}
+.navbar .links a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+.navbar .links li a:hover{
+
+    color: rgb(46, 147, 147);
+    
+    
+}
+.navbar .links li a:active{
+    background-color: lightgray;
+    padding: 20px;
+    
+}
+.navbar .links li a:hover:visited{
+    font-weight: bold;
+    color: rgb(8, 134, 134);
+    bottom: -10px;
+    width: 100%;
+    height: 2px;    
+}
+
+.navbar .toggle_btn{
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+    display: none;
+    margin-right: 20px;
+    width: 2px;
+    height: 1px;
+    border: 1p solid red;
+}
+.action_btn{
+    background-image: linear-gradient(to right, rgb(11,131,167), green);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+    transition:  0.3s ease-in-out;
+    margin-right: 4rem;
+    
+}
+.action_btn:hover{
+    transition: 0.3sec ease-in-out;
+}
+.dropdown_menu{
+    display: hidden;
+    position: absolute;
+    right: 2rem;
+    top: 54px;
+    height: 0;
+    width: 300px;
+    background: transparent;
+    backdrop-filter: blur(100px);
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+.dropdown_menu.open{
+    height: 240px;
+}
+.dropdown_menu ul a{
+    padding: 0.7rem;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    line-height: 1.5;
+}
+
+
+.dropdown_menu ul a:hover{
+    background-color: white;
+    
+}
+.dropdown_menu ul a::after{
+    color: red;
+}
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.section-icons a{
+    font-size: 25px;
+    color: #000;
+    justify-content: space-between;
+    line-height: 4;
+    cursor: pointer;
+    padding-right: 20px;
+    
+    
+
+}
+.section-icons a:after{
+    color: black;
+}
+.section{
+    background-color: rgb(250, 250, 248);
+    
+}
+.section_container{
+    min-height: 80vh;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 2;
+    margin-top: 0;
+    
+}
+
+h3{
+    font-family: 'Alfa Slab One', cursive; ;
+}
+.content h5{
+    top: 0;
+    font-size: 20px;
+    color: #444444;
+    
+}
+.content h1{
+    
+    font-size: 40px;
+    font-weight: 600;
+}
+.content p a{
+    color: rgb(8, 111, 111);
+    font-family: 'Alfa Slab One', cursive;
+
+}
+.content p a:hover{
+    color: green;
+}
+.image{
+    display: grid;
+    place-items: center;
+}
+.image img{
+    width: min(25rem, 90%);
+    
+
+}
+.image img:hover{
+    transform: scale(1.2);
+}
+
+
+
+
+
+@media(max-width:1110px){
+    
+    .navbar{
+        display: flex;
+    }
+    .navbar_icons a{
+        display: flex;
+    }
+
+}
+
+@media (max-width:992px) {
+     .navbar .links {
+        display: flex;
+     }
+     .navbar .action_btn{
+        display: none;
+     }
+     .navbar .toggle_btn {
+        display: none;
+     }
+     .dropdown_menu {
+        display: block;
+     }
+     .navbar_icons a{
+        display: none;
+     }
+    
+
+     
+
+}
+@media (max-width:680px) {
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+        
+    }
+    .navbar .action_btn{
+        display: none;
+    }
+    .navbar{
+        background-color: blue;
+        
+    }
+    .navbar .toggle_btn{
+        display: block;
+        margin-left:20px;
+        margin-top: 0px;
+    }
+    .dropdown_menu {
+        margin-top: 5px;
+        left: 2rem;
+        width: unset;
+    }
+    .dropdown_menu .links{
+        display: block;
+
+    }
+    
+   /* .dropdown_menu .links li a:hover{
+        background-color: blue;
+        color: #fff;
+    }*/
+     
+    .navbar .logo {
+        margin-left: 40px;
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+    }
+   
+   
+   .left .action_btn{
+    display: block;
+         padding: 10px 20px;
+        width: 40%;
+        align-items: center;
+        justify-content: center;
+    } 
+   .section_container{
+    padding: 10rem 1rem 5re 1rem;
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
+   }
+   .image{
+    grid-area: 1/1/2/2;
+   }
+
+}
+
+
+
+
+
+    
+
