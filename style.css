@@ -28,9 +28,6 @@ header{
     justify-content: space-between;
     align-items: center;
     text-decoration: none;
-
-   
- 
 }
 .navbar .logo {
     display: flex;
@@ -112,12 +109,12 @@ header{
 
 .navbar .toggle_btn{
     color: black;
-    font-size: 1rem;
+    font-size: 1.5rem;
     cursor: pointer;
     display: none;
-    margin-right: 20px;
-    width: 2px;
-    height: 1px;
+    margin: 20px;
+    width: 3px;
+    height: 2px;
     border: 1p solid red;
 }
 .action_btn{
@@ -152,7 +149,7 @@ header{
 
 }
 .dropdown_menu.open{
-    height: 240px;
+    height: 300px;
 }
 .dropdown_menu ul a{
     padding: 0.7rem;
@@ -160,7 +157,7 @@ header{
     align-items: left;
     justify-content: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     color: black;
     line-height: 1.5;
@@ -215,6 +212,7 @@ header{
     justify-content: center;
     line-height: 2;
     margin-top: 0;
+
     
 }
 
@@ -245,16 +243,12 @@ h3{
     place-items: center;
 }
 .image img{
-    width: min(25rem, 90%);
-    
-
+    width: min(20rem, 80%);
+    display: grid;
 }
 .image img:hover{
     transform: scale(1.2);
 }
-
-
-
 
 
 @media(max-width:1110px){
@@ -299,7 +293,7 @@ h3{
         display: none;
     }
     .navbar{
-        background-color: blue;
+        background-color: green;
         
     }
     .navbar .toggle_btn{
@@ -316,7 +310,8 @@ h3{
         display: block;
 
     }
-    
+
+  
    /* .dropdown_menu .links li a:hover{
         background-color: blue;
         color: #fff;
@@ -346,6 +341,19 @@ h3{
     grid-area: 1/1/2/2;
    }
 
+}
+@media (max-width:460px){
+    .image{
+        width: min(30rem,100%);
+        background-color: #000;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+    }
+    .image img{
+        width: min(25rem, 90%);
+        border-radius: 50%;
+    }
 }
 
 
